@@ -12,8 +12,10 @@ ser = serial.Serial(
 )
 counter=0
 
-with open('somefile.txt', 'a') as the_file:
+with open('doorbell.log', 'a') as the_file:
 	while 1:
 		x=ser.readline()
-		the_file.write('x')
-		print x
+		the_file.write(x)
+		#print x
+                if(x != ""):
+                    print "Doorbell has rang!\n"
